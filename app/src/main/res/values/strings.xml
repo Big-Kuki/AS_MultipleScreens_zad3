@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Zamówienie Pizzy</string>
+    <string name="header_pizza">Skomponuj pizzę</string>
+    <string name="label_customer">Imię i ulica dostawy</string>
+    <string name="label_size">Rozmiar pizzy</string>
+    <string name="label_quantity">Liczba sztuk (1–10)</string>
+    <string name="extra_cheese">Podwójny ser (+5 zł)</string>
+    <string name="extra_garlic">Sos czosnkowy (+3 zł)</string>
+    <string name="btn_order_summary">PODSUMOWANIE</string>
+
+    <string name="header_order_summary">Podsumowanie zamówienia</string>
+    <string name="btn_confirm_order">ZAMÓW</string>
+    <string name="btn_back_edit">POPRAW</string>
+    <string name="btn_call_pizzeria">Zadzwoń do pizzerii</string>
+    <string name="pizzeria_phone">tel:123456789</string>
+
+    <string name="order_details_format">Adres: %1\$s\nRozmiar: %2$s\nIlość: \%3$d szt.\nPodwójny ser: %4\$s\nSos czosnkowy: %5$s\n\nDo zapłaty: \%6$d zł</string>
+    <string name="yes">tak</string>
+    <string name="no">nie</string>
+    <string name="order_confirmed">Zamówienie przyjęte! Numer: %1\$s</string>
+    <string name="order_canceled">Anulowano – możesz poprawić zamówienie</string>
+    <string name="error_empty_address">Podaj adres dostawy!</string>
+    <string name="error_no_app">Brak aplikacji telefonu</string>
+
+    <string name="btn_about">O aplikacji</string>
+    <string name="about_text">Zamówienie Pizzy v1.0\nAutor: Technik Programista</string>
+
+    <string-array name="pizza_sizes">
+        <item>Mała (30 zł)</item>
+        <item>Średnia (40 zł)</item>
+        <item>Duża (50 zł)</item>
+    </string-array>
+</resources>
