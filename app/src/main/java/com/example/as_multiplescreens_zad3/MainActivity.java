@@ -2,6 +2,7 @@ package com.example.as_multiplescreens_zad3;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -14,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "STOS_TEST";
 
     private final ActivityResultLauncher<Intent> orderLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "MainActivity -> onCreate");
         setContentView(R.layout.activity_main);
 
         etAddress = findViewById(R.id.etAddress);
@@ -50,6 +54,19 @@ public class MainActivity extends AppCompatActivity {
         spSize.setAdapter(adapter);
 
         findViewById(R.id.btnNext).setOnClickListener(v -> validateAndOpenSummary());
+        findViewById(R.id.btnAbout).setOnClickListener(v -> openAboutScreen());
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "MainActivity -> onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "MainActivity -> onDestroy");
     }
 
     private void validateAndOpenSummary() {
@@ -70,5 +87,8 @@ public class MainActivity extends AppCompatActivity {
         orderLauncher.launch(intent);
     }
 
-    
+    private void openAboutScreen() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+    }
 }

@@ -23,7 +23,7 @@
     <string name="error_no_app">Brak aplikacji telefonu</string>
 
     <string name="btn_about">O aplikacji</string>
-    <string name="about_text">Zamówienie Pizzy v1.0\nAutor: Technik Programista</string>
+    <string name="about_text">Zamówienie Pizzy v1.0\nAutor: Daniel Książek</string>
 
     <string-array name="pizza_sizes">
         <item>Mała (30 zł)</item>

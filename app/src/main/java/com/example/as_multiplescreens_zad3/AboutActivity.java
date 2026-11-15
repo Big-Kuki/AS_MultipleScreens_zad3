@@ -1,24 +1,29 @@
 package com.example.as_multiplescreens_zad3;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class AboutActivity extends AppCompatActivity {
+
+    private static final String TAG = "STOS_TEST";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        Log.d(TAG, "AboutActivity -> onCreate");
         setContentView(R.layout.activity_about);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "AboutActivity -> onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "AboutActivity -> onDestroy");
     }
 }

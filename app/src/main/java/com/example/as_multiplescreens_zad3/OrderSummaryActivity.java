@@ -4,12 +4,15 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
 public class OrderSummaryActivity extends AppCompatActivity {
+
+    private static final String TAG = "STOS_TEST";
 
     public static final String EXTRA_ADDRESS = "com.example.zamowieniepizzy.ADDRESS";
     public static final String EXTRA_SIZE_NAME = "com.example.zamowieniepizzy.SIZE_NAME";
@@ -22,6 +25,7 @@ public class OrderSummaryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "OrderSummaryActivity -> onCreate");
         setContentView(R.layout.activity_order_summary);
 
         TextView tvSummary = findViewById(R.id.tvOrderSummary);
@@ -30,6 +34,18 @@ public class OrderSummaryActivity extends AppCompatActivity {
         findViewById(R.id.btnConfirm).setOnClickListener(v -> confirmOrder());
         findViewById(R.id.btnEdit).setOnClickListener(v -> finish());
         findViewById(R.id.btnCall).setOnClickListener(v -> callPizzeria());
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "OrderSummaryActivity -> onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "OrderSummaryActivity -> onDestroy");
     }
 
     private String prepareSummary() {
